@@ -1,0 +1,29 @@
+version: '3'
+services:
+  database:
+    image: mysql:latest
+    container_name: database
+    restart: always
+    ports:
+      - 33060:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: trybecashdb
+    volumes:
+      - ./db_script.sql:/docker-entrypoint-initdb.d/trybecash_script.sql
+
+  node:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    container_name: trybecash
+    restart: always
+    working_dir: /app
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+    volumes:
+      - ./:/app
+
+  
