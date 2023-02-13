@@ -5,23 +5,24 @@ services:
     container_name: database
     restart: always
     ports:
-      - 3306:3306
+      - 33060:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
-  
-  node:
-    image: node:18
-    container_name: backend
-    stdin_open: true
-    tty: true
-    restart: always
-    command: bash
-    working_dir: /app
-    volumes:
-      - ./:/app
-    ports:
-      - 3001:3001
-    depends_on:
-      - database
+
+  # not working due to connection issues use database only and run node without docker
+  # node:
+  #   image: node:18
+  #   container_name: backend
+  #   stdin_open: true
+  #   tty: true
+  #   restart: always
+  #   command: bash
+  #   working_dir: /app
+  #   volumes:
+  #     - ./:/app
+  #   ports:
+  #     - 3001:3001
+  #   depends_on:
+  #     - database
 
       
