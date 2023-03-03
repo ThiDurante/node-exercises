@@ -1,5 +1,3 @@
-const Account = require('./Account');
-
 /**
  *
  * @param {import('sequelize').Sequelize} sequelize

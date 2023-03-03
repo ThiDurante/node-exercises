@@ -19,7 +19,7 @@ const getCommentsByAccId = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.param;
     const newComment = req.body;
     newComment.upvoting = 0;
     newComment.downvoting = 0;
