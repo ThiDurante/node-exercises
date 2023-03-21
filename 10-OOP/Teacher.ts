@@ -3,7 +3,7 @@ import Person from './Person';
 import Subject from './Subject';
 
 export default class Teacher extends Person implements Employee {
-  _registration: string;
+  readonly _registration: string;
   _admissionDate: Date;
   _salary: number;
   _subject: Subject;

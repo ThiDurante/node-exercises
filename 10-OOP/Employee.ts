@@ -2,7 +2,7 @@ import IEmployee from './IEmployee';
 import Person from './Person';
 
 export default class Employee extends Person implements IEmployee {
-  _registration: string;
+  readonly _registration: string;
   _salary: number;
   _admissionDate: Date;
   constructor(

@@ -20,19 +20,12 @@
 import Person from './Person';
 
 export default class Student extends Person {
-  private _enrollment = String();
+  readonly _enrollment = String();
   private _examsGrades: number[] = [];
   private _assignmentsGrades: number[] = [];
   constructor(name: string, birthDate: Date) {
     super(name, birthDate);
     this._enrollment = this.generateEnrollment();
-  }
-
-  set enrollment(value: string) {
-    if (value.length < 16) {
-      throw new Error('Enrollment must have more than 16 chars');
-    }
-    this._enrollment = value;
   }
 
   get enrollment(): string {
