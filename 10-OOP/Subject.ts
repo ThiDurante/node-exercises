@@ -1,16 +1,16 @@
 export default class Subject {
-  _discipline: string;
-  constructor(discipline: string) {
-    this._discipline = discipline;
+  _subject: string;
+  constructor(subject: string) {
+    this._subject = subject;
   }
-  get discipline(): string {
-    return this._discipline;
+  get subject(): string {
+    return this._subject;
   }
 
-  set discipline(value: string) {
+  set subject(value: string) {
     if (value.length < 3) {
-      throw new Error('Discipline must have more than 3 characteres');
+      throw new Error('Subject must have more than 3 characteres');
     }
-    this._discipline = value;
+    this._subject = value;
   }
 }
